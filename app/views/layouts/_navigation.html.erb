@@ -24,9 +24,12 @@
 
              
             <li class="nav-item">
+            <% if user_signed_in? %>
            <%= link_to 'sign out' , destroy_user_session_path, class: "nav-link" ,method: :delete %>
-
+           <% end %>
             </li>
+
+            
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -34,4 +37,6 @@
       </form>
     </div>
 </nav>
+
+
         
