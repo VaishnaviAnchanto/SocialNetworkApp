@@ -1,12 +1,11 @@
 @import 'bootstrap/dist/css/bootstrap';
 .navbar {
-    background-color: grey !important;
+    background-color:darkkhaki !important;
+    font-weight: bold;
 } 
-
   .nav-link
   {
-        color:white !important;
-        
+        color:black !important;    
   }
 
   #logo
@@ -26,10 +25,10 @@
 
   .jumbotron{
 
-      background-image: asset-url('image2.jpg');
+      background-image: asset-url('image3.jpg');
       background-repeat: no-repeat;
      background-size: cover;
-     height: 425px;
+     height: 600px;
   }
 
   html,

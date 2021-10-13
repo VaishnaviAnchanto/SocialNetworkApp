@@ -2,7 +2,6 @@ class PostsController <ApplicationController
     def show
       #byebug
       @post=Post.find(params[:id])
-     # @comments= @article.comments.order('comments.created_at DESC')
      @comments = @post.comments 
     end
   
@@ -20,12 +19,9 @@ class PostsController <ApplicationController
     end
   
     def create
-      #render plain: params[:article]
       @post= Post.new(params.require(:post).permit(:title, :description))
       @post.user=current_user
-      #render plain: @article
-      #render plain: @article.inspect
-        if @post.save   #redirect_to article_path(@article)
+        if @post.save   #redirect_to post_path(@post)
            redirect_to @post
         else
            render 'new'
@@ -35,7 +31,7 @@ class PostsController <ApplicationController
     def update
       @post = Post.find(params[:id])
         if  @post.update(params.require(:post).permit(:title, :description))
-         #flash[:notice] = "Article was updated successfully."
+         #flash[:notice] = "Post was updated successfully."
          redirect_to @post
         else
           render 'edit'
