@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about' , to: 'pages#about'
   resources :posts
-  get'signup' ,to: 'users#new'
+  
+  get 'search', to:'users#search'
   #resources :users, except: [:new]
   resources :users , only: [:show ,:index]
   resources :comments, only: [:new,:create]
-
+  
 end
 
 
