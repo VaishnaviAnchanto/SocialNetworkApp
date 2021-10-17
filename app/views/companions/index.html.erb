@@ -1,0 +1,32 @@
+<div id="page-content">
+<h1 class="text-center mt-4">Friends</h1>
+<div class="container">
+<% @companions.each do |companion| %>
+    <% @friend=User.find_by(id:companion.buddy) %>
+    <div class="row justify-content-md-center">
+        <div class="col-8 mt-4">
+            <div class="card text-center shadow mb-5 bg-white rounded">
+                <div class="card-header font-italic">
+                    <%= @friend.email.split("@")[0].capitalize %><br/>
+                    <% if @friend.avatar.attached? %>
+                        <%= image_tag(@friend.avatar_thumbnail) %>
+                    <% else %>    
+                        <%= image_tag("defualt.png", style:'width:30%') %>
+                    <% end %>   
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title"><%= pluralize(@friend.posts.count,"Post") %></h5>
+                    <%= link_to "View Profile", user_path(@friend), class: "btn btn btn-outline-success" %>
+                </div>
+        <div class="card-footer text-muted">
+            <small>
+            Joined <%= time_ago_in_words(@friend.created_at) %> ago
+            </small>
+        </div>
+            </div>
+        </div>
+    </div>
+<% end %>
+</div>
+</div>

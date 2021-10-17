@@ -1,0 +1,23 @@
+<div id="page-content">
+    <h1 class="text-center mt-4">Friend Requests</h1>
+    <div class="container">
+            <% @friends.each do |request| %>
+                <div class="row justify-content-md-center" >
+                    <% @user=User.find_by(id:request.receiver_id) %>
+                    <div class="card" style="width: 18rem;">
+                        <% if @user.avatar.attached? %>
+                            <%= image_tag(User.find_by(id:request.receiver_id).avatar_thumbnail) %>
+                        <% else %>    
+                            <%= image_tag("defualt.png", style:'width:30%') %>
+                        <% end %> 
+                        <div class="card-body">
+                            <h5 class="card-title">From: <%=@user.email %></h5>
+                            <%= link_to "View", friend_path(request), class:"btn btn-outline-primary" %>
+                        </div>
+                    </div>
+
+                    </div>
+                <br/>
+            <% end %>    
+    </div>
+</div>
