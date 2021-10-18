@@ -11,10 +11,9 @@
                     <% if @friend.avatar.attached? %>
                         <%= image_tag(@friend.avatar_thumbnail) %>
                     <% else %>    
-                        <%= image_tag("defualt.png", style:'width:30%') %>
+                        <%= image_tag("img1.jpg", style:'width:30%') %>
                     <% end %>   
                 </div>
-
                 <div class="card-body">
                     <h5 class="card-title"><%= pluralize(@friend.posts.count,"Post") %></h5>
                     <%= link_to "View Profile", user_path(@friend), class: "btn btn btn-outline-success" %>

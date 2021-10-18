@@ -4,7 +4,6 @@
     <% if @user.posts.count==0 %>
         <h4 class="text-center mt-4"> No Posts Yet <h4>
     <% else %>    
-
     <div class="row justify-content-md-center">
     <% if @user.avatar.attached? %>
             <%= image_tag(@user.avatar_thumbnail) %>
@@ -12,9 +11,6 @@
             <%= image_tag("img1.jpg", style:'width:30%') %>
         <% end %>
         </div>
-      
       <%= render 'posts/post' %>
-     
     <% end %>
-    
 </div>

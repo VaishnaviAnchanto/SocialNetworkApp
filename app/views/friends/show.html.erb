@@ -3,7 +3,6 @@
     <h1 class="text-center mt-4"><%=@user.email%></h1>
     <div class="container">
                 <div class="row justify-content-md-center" >
-                    
                     <div class="card" style="width: 18rem;">
                         <% if @user.avatar.attached? %>
                             <%= image_tag(@user.avatar_thumbnail) %>
@@ -12,11 +11,7 @@
                         <% end %> 
                         <div class="card-body">
                             <h5 class="card-title">From: <%=@user.email %></h5>
-
-
                             <%= form_with scope: :companion, url: companions_path, local: true do |f|%>
-    
-    
                                 <div class="form-group row justify-content-center">
                                     <div class="form-group row">
                                         <div class="col-10">
@@ -34,19 +29,12 @@
                                         </div>   
                                     </div>
                                 </div>
-                              
-                              
                                     <%= f.submit "Accept", class:"btn btn-outline-success" %>
-                              
                             <% end %>
-
-
-
                             <br/>
                             <%= link_to "Decline", friend_path(@friend), class:"btn btn-outline-danger", method: :delete, data: {confirm:"Are you sure?"}  %>
                         </div>
                     </div>
-
                     </div>
                 <br/>
     </div>

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Companion < ApplicationRecord
-    belongs_to :user
+  belongs_to :user
 end
