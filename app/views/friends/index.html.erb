@@ -10,10 +10,10 @@
                         <% else %>    
                             <%= image_tag("defualt.png", style:'width:30%') %>
                         <% end %> 
-                        <div class="card-body">
-                            <h5 class="card-title">From: <%=@user.email %></h5>
-                            <%= link_to "View", friend_path(request), class:"btn btn-outline-primary" %>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title">From: <%=@user.email %></h5>
+                        <%= link_to "View", friend_path(request), class:"btn btn-outline-primary" %>
+                    </div>
                     </div>
                     </div>
                 <br/>

@@ -22,4 +22,5 @@ class CompanionsController < ApplicationController
   def index
     @companions = current_user.companions
   end
+  
 end

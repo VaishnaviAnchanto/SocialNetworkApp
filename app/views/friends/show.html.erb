@@ -7,7 +7,7 @@
                         <% if @user.avatar.attached? %>
                             <%= image_tag(@user.avatar_thumbnail) %>
                         <% else %>    
-                            <%= image_tag("defualt.png", style:'width:30%') %>
+                            <%= image_tag("img1.jpg", style:'width:30%') %>
                         <% end %> 
                         <div class="card-body">
                             <h5 class="card-title">From: <%=@user.email %></h5>
@@ -35,7 +35,7 @@
                             <%= link_to "Decline", friend_path(@friend), class:"btn btn-outline-danger", method: :delete, data: {confirm:"Are you sure?"}  %>
                         </div>
                     </div>
-                    </div>
-                <br/>
+                </div>
+            <br/>
     </div>
 </div>
